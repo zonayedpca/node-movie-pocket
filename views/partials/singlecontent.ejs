@@ -1,0 +1,36 @@
+<div class="single-content">
+  <div class="single-card">
+    <div class="banner">
+      <img src="<%= data.Poster === 'N/A' ? 'https://via.placeholder.com/300x424' : data.Poster %>" alt="<%= data.Title %>">
+      <div class="meta">
+        <h2><%= data.Title %></h2>
+        <ul class="details">
+          <% data.Genre.split(',').forEach(oneGenre => { %>
+            <li><%= oneGenre %></li>
+          <% }) %>
+        </ul>
+        <ul class="info">
+          <li><%= data.imdbRating %></li>
+          <li><%= data.Year %></li>
+          <li><%= data.Runtime %></li>
+        </ul>
+        <% if(isAuthenticated && !alreadyInPocket) { %>
+          <a href="/new/<%= data.imdbID %>" class="btn addtowatch">Add to Pocket</a>
+        <% } else if(isAuthenticated) { %>
+          <a href="/<%= data.Type %>/<%= data.imdbID %>/remove" class="btn btn-op addtowatch">Remove from Pocket</a>
+        <% } %>
+      </div>
+    </div>
+    <div class="card-content">
+      <p><%= data.Plot %></p>
+      <p><strong>Released: </strong><%= data.Released %></p>
+      <p><strong>Actors: </strong><%= data.Actors %></p>
+      <p><strong>Writer: </strong><%= data.Writer %></p>
+      <p><strong>Awards: </strong><%= data.Awards %></p>
+      <p><strong>Production: </strong><%= data.Production %></p>
+      <% if(data.Website !== 'N/A') { %>
+        <p><strong>Website: </strong><a href="<%= data.Website %>"><%= data.Website %></a></p>
+      <% } %>
+    </div>
+  </div>
+</div>

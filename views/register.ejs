@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<header class="intro-area">
+  <div class="container">
+    <% include partials/menubar %>
+  </div>
+</header>
+
+<section class="login-area section-padding">
+  <div class="container">
+    <div class="login">
+      <div class="card server-status">
+        <h2>Register</h2>
+        <form class="form register-form" action="/register" method="POST">
+          <input type="text" name="username" placeholder="Your username">
+          <input type="password" name="password" placeholder="Your password">
+          <button type="submit" class="btn btn-login">Register</button>
+          <a href="/login" class="btn signin">Sign in</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include partials/footer %>

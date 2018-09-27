@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+button, input, select {
+  border: none;
+}
+
+body {
+  background-color: #e9ebee;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.intro-area {
+  background-image: url(/img/cover.svg);
+  background-color: #512121;
+  background-size: cover;
+  background-position: top;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.navbar .brand {
+  flex: 1;
+}
+
+.navbar .brand a {
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+}
+
+.navbar .brand img {
+  width: 40px;
+}
+
+.navbar .brand span {
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 15px;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-movie {
+  width: 640px;
+  margin: 0 auto;
+  padding: 140px 0;
+}
+
+.search-movie .form-inline {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.search-movie .form-inline .sort {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    flex: 1;
+}
+
+.search-movie .form-inline .sort label {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-movie .form-inline .sort select,
+.search-movie .form-inline .sort input {
+    padding: 15px;
+    border-radius: 100px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.search-movie .search-area {
+    display: flex;
+    margin: 0 5px;
+    flex: 1;
+}
+
+.search-movie .search-area>* {
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.search-movie .search-area button {
+    flex-basis: 120px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.intro-text {
+  text-align: center;
+  padding: 50px 0;
+  color: #fff;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.content .card {
+  flex-basis: calc(25% - 30px);
+  background-color: #fff;
+  margin: 15px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 5px 30px hsla(224,8%,64%,.25);
+  box-shadow: 0 5px 30px hsla(224,8%,64%,.25);
+}
+
+.card .card-content {
+    padding: 10px 15px;
+}
+
+.card .card-content a {
+  text-decoration: none;
+  color: #333;
+}
+
+.card .card-content .addtowatch {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 15px;
+  padding: 8px 0;
+  border-radius: 4px;
+  background: #512121;
+}
+
+.card .card-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.card .card-content ul li {
+  display: inline;
+  padding: 2px 5px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 900;
+}
+
+.card .card-content ul li.type {
+  background: #4CAF50;
+}
+
+.card .card-content ul li.year {
+  background: #607D8B;
+}
+
+.card .card-content img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.card .card-content h4 {
+    text-transform: uppercase;
+}
+
+.single-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.single-card ul li {
+  display: inline;
+  margin-right: 5px;
+}
+
+.single-card ul.details {
+  margin: 10px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #333;
+}
+
+.single-card ul.details li:after {
+  content: "";
+  position: relative;
+  top: -3px;
+  margin-left: 6px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  height: 5px;
+  width: 5px;
+  border-radius: 100%;
+}
+
+.single-card ul.details li:last-child:after {
+  display: none;
+}
+
+.single-card ul.info li {
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.single-card .btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #512121;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-weight: 900;
+  border-radius: 4px;
+}
+
+.single-card .banner {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 45px;
+}
+
+.single-card .banner .meta {
+  margin-left: 25px;
+}
+
+.single-card .banner img {
+  height: 100%;
+  width: 160px;
+  -webkit-box-shadow: 0 5px 30px hsla(224,8%,64%,.25);
+  box-shadow: 0 5px 30px hsla(224,8%,64%,.25);
+}
+
+.single-card .card-content {
+  background-color: #fff;
+  padding: 15px 25px;
+  -webkit-box-shadow: 0 5px 30px hsla(224,8%,64%,.25);
+  box-shadow: 0 5px 30px hsla(224,8%,64%,.25);
+}
+
+.login {
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 4px;
+  width: 340px;
+}
+
+.login h2 {
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.login .form input {
+  display: block;
+  margin: 15px 0;
+  padding: 15px 10px;
+  width: 100%;
+}
+
+.login .form button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.login .form a {
+  padding-top: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.login .form .btn,
+.login .form button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-area {
+    padding-bottom: 100px;
+}
+
+.footer ul {
+  list-style: none;
+  text-align: center;
+}
+
+.footer ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.footer ul li {
+  color: #333;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #512121;
+  padding: 2px 5px;
+  border-radius: 4px;
+}

@@ -1,0 +1,14 @@
+<div class="content">
+  <% data.forEach(singleData => { %>
+    <div class="card">
+      <img src="<%= singleData.Poster === 'N/A' ? 'https://via.placeholder.com/300x424' : singleData.Poster %>" alt="<%= singleData.Title %>">
+      <div class="card-content">
+        <h4><a href="/<%= singleData.Type %>/<%= singleData.imdbID %>"><%= singleData.Title %></a></h4>
+        <ul>
+          <li class="type"><%= singleData.Type %></li>
+          <li class="year"><%= singleData.Year %></li>
+        </ul>
+      </div>
+    </div>
+  <% }) %>
+</div>

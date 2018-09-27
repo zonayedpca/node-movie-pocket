@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="brand">
+    <a href="/">
+      <img src="/img/logo.svg" alt="icon">
+      <span>Movie Pocket</span>
+    </a>
+  </div>
+  <ul>
+    <% if(isAuthenticated) { %>
+      <li><a href="/pocket">My Pocket</a></li>
+      <li><a href="/logout">Logout</a></li>
+    <% } else { %>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    <% } %>
+  </ul>
+</nav>

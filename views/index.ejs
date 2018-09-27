@@ -1,0 +1,76 @@
+<% include partials/header %>
+
+<header class="intro-area">
+  <div class="container">
+    <% include partials/menubar %>
+    <div class="search-movie">
+      <form class="search-form" action="/search" method="get">
+        <div class="form-inline">
+          <div class="sort">
+            <label for="type">Type</label>
+            <select class="type" name="type">
+              <option value="">Any</option>
+              <option value="movie">Movie</option>
+              <option value="game">Game</option>
+              <option value="series">Series</option>
+            </select>
+          </div>
+          <div class="sort">
+            <label for="rating">Rating</label>
+            <select class="rating" name="rating">
+              <option value="">Any</option>
+              <option value="action">5 Star</option>
+              <option value="action">4 Star</option>
+              <option value="action">3 Star</option>
+              <option value="action">2 Star</option>
+              <option value="action">1 Star</option>
+            </select>
+          </div>
+          <div class="sort">
+            <label for="year">Year</label>
+            <select class="year" name="year">
+              <option value="">Any</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+              <option value="2009">2009</option>
+              <option value="2008">2008</option>
+              <option value="2007">2007</option>
+              <option value="2006">2006</option>
+              <option value="2005">2005</option>
+              <option value="2004">2004</option>
+              <option value="2003">2003</option>
+              <option value="2001">2001</option>
+              <option value="2000">2000</option>
+            </select>
+          </div>
+          <div class="sort">
+            <label for="orderby ">Order By</label>
+            <select class="orderby" name="orderby">
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+            </select>
+          </div>
+        </div>
+        <div class="search-area">
+          <input type="text" name="title" placeholder="Find Your Favorite Movie">
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<section class="top-area section-padding">
+  <div class="container">
+      <% include partials/content %> 
+  </div>
+</section>
+
+<% include partials/footer %>

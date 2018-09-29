@@ -69,7 +69,12 @@
 
 <section class="top-area section-padding">
   <div class="container">
-      <% include partials/content %> 
+      <% if(message.length) { %>
+      <div class="msg success">
+        <%= message %>
+      </div>
+      <% } %>
+      <% include partials/content %>
   </div>
 </section>
 

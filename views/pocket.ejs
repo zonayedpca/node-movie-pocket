@@ -9,6 +9,16 @@
 
 <section class="content-area section-padding">
   <div class="container">
+    <% if(added.length) { %>
+    <div class="msg success">
+      <%= added %>
+    </div>
+    <% } %>
+    <% if(removed.length) { %>
+    <div class="msg err">
+      <%= removed %>
+    </div>
+    <% } %>
     <% include partials/content %>
   </div>
 </section>

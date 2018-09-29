@@ -5,6 +5,7 @@ const Top = require('../models/top');
 module.exports = app => {
   app.get('/search', async(req, res) => {
     const { title, year } = req.query;
+    res.locals.mainTitle = `Showing results for ${title}- Movie Pocket`;
     const query = `http://www.omdbapi.com/?apikey=${omdbiapikey}&s=${title}&y=${year}`;
     const { data } = await axios(query);
     if(data.Error)

@@ -1,4 +1,9 @@
 <div class="content">
+  <% if(!data.length) { %>
+    <div class="404">
+      <h2>Nothing Found</h2>
+    </div>
+  <% } %>
   <% data.forEach(singleData => { %>
     <div class="card">
       <img src="<%= singleData.Poster === 'N/A' ? 'https://via.placeholder.com/300x424' : singleData.Poster %>" alt="<%= singleData.Title %>">

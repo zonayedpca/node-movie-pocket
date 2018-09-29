@@ -9,6 +9,11 @@
 <section class="login-area section-padding">
   <div class="container">
     <div class="login">
+      <% if(message.length) { %>
+      <div class="msg err">
+        <%= message %>
+      </div>
+      <% } %>
       <div class="card">
         <h2>Login</h2>
         <form class="form login-form" action="/login" method="POST">

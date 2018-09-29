@@ -5,6 +5,7 @@ const express = require('express'),
       passport = require('passport'),
       expressSession = require('express-session'),
       LocalStategy = require('passport-local'),
+      flash = require('connect-flash'),
       User = require('./models/user'),
       { port, db, secret } = require('./config');
 
@@ -20,7 +21,9 @@ app.use(expressSession({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(function(req, res, next){
+  res.locals.mainTitle = 'Movie Pocket - Your Favorite movie Right into Your Pocket';
   res.locals.isAuthenticated = req.isAuthenticated();
   next();
 });

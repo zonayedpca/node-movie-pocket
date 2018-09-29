@@ -3,8 +3,9 @@ const User = require('../models/user'),
 
 module.exports = app => {
   app.get('/login', (req, res) => {
-    console.log(req);
-    res.render('login');
+    res.locals.mainTitle = 'Login - Movie Pocket';
+    const message = req.flash('err');
+    res.render('login', { message });
   })
 
   app.post('/login', passport.authenticate('local', {
@@ -13,7 +14,9 @@ module.exports = app => {
   }))
 
   app.get('/register', (req, res) => {
-    res.render('register');
+    res.locals.mainTitle = 'Register - Movie Pocket';
+    const message = req.flash('err');
+    res.render('register', { message });
   })
 
   app.post('/register', async (req, res) => {
@@ -21,10 +24,11 @@ module.exports = app => {
     try {
       const user = await User.register(new User({username}), password);
       passport.authenticate('local')(req, res, () => {
+        req.flash('success', `Welcome ${username}! You can now use Movie Pocket`);
         res.redirect('/');
       })
     } catch(err) {
-      console.log(err);
+      req.flash('err', err.message);
       res.redirect('/register');
     }
   });

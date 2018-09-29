@@ -15,6 +15,7 @@ module.exports = app => {
       const theUser = await User.findById(req.user._id).populate('pocket');
       alreadyInPocket = theUser.pocket.some(one => one.imdbID === imdbID);
     }
+    res.locals.mainTitle = `${data.Title} - Movie Pocket`;
     res.render('single', { data, alreadyInPocket });
   });
 }

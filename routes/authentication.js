@@ -35,6 +35,7 @@ module.exports = app => {
 
   app.get('/logout', (req, res) => {
     req.logout();
+    req.flash('success', 'Sucessfully logged out from Movie Pocket');
     res.redirect('/');
   })
 }

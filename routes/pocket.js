@@ -1,16 +1,16 @@
-const { omdbiapikey } = require('../config');
-const axios = require('axios');
-const isLoggedIn = require('../middlewares/isLoggedIn');
-const User = require('../models/user');
-const Pocket = require('../models/pocket');
+const { omdbiapikey } = require('../config'),
+      axios = require('axios'),
+      isLoggedIn = require('../middlewares/isLoggedIn'),
+      User = require('../models/user'),
+      Pocket = require('../models/pocket');
 
 module.exports = app => {
   app.get('/pocket', isLoggedIn, async(req, res) => {
-    res.locals.mainTitle = 'My Pocket - Movie Pocket';
     const items = await User.findById(req.user._id).populate('pocket');
     const { pocket: data } = items;
     const added = req.flash('added');
     const removed = req.flash('removed');
+    res.locals.mainTitle = 'My Pocket - Movie Pocket';
     res.render('pocket', { title: 'My Pocket', data, added, removed})
   });
 

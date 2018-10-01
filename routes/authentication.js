@@ -3,8 +3,8 @@ const User = require('../models/user'),
 
 module.exports = app => {
   app.get('/login', (req, res) => {
-    res.locals.mainTitle = 'Login - Movie Pocket';
     const message = req.flash('err');
+    res.locals.mainTitle = 'Login - Movie Pocket';
     res.render('login', { message });
   })
 
@@ -14,8 +14,8 @@ module.exports = app => {
   }))
 
   app.get('/register', (req, res) => {
-    res.locals.mainTitle = 'Register - Movie Pocket';
     const message = req.flash('err');
+    res.locals.mainTitle = 'Register - Movie Pocket';
     res.render('register', { message });
   })
 

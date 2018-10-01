@@ -1,9 +1,8 @@
-const { omdbiapikey } = require('../config');
-const axios = require('axios');
-const isLoggedIn = require('../middlewares/isLoggedIn');
-const User = require('../models/user');
-const Pocket = require('../models/pocket');
-
+const { omdbiapikey } = require('../config'),
+      axios = require('axios'),
+      isLoggedIn = require('../middlewares/isLoggedIn'),
+      User = require('../models/user'),
+      Pocket = require('../models/pocket');
 
 module.exports = app => {
   app.get('/:type/:imdbID', async(req, res) => {

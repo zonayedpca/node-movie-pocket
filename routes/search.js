@@ -1,12 +1,11 @@
-const { omdbiapikey } = require('../config');
-const axios = require('axios');
-const Top = require('../models/top');
+const { omdbiapikey } = require('../config'),
+      axios = require('axios'),
+      Top = require('../models/top');
 
 module.exports = app => {
   app.get('/search', async(req, res) => {
-    const { title, year } = req.query;
-    res.locals.mainTitle = `Showing results for ${title}- Movie Pocket`;
-    const query = `http://www.omdbapi.com/?apikey=${omdbiapikey}&s=${title}&y=${year}`;
+    const { title, year, type, orderby } = req.query;
+    const query = `http://www.omdbapi.com/?apikey=${omdbiapikey}&s=${title}&y=${year}&type=${type}`;
     const { data } = await axios(query);
     if(data.Error)
       return res.render('404');
@@ -17,6 +16,8 @@ module.exports = app => {
     } else {
       await Top.findByIdAndUpdate(findTheMovie._id, {$inc: {hit: 1}});
     }
-    res.render('search', { title, data: data.Search });
+    const finalData = orderby === 'za' ? data.Search.reverse() : data.Search;
+    res.locals.mainTitle = `Showing results for ${title}- Movie Pocket`;
+    res.render('search', { title, data: finalData });
   })
 }
